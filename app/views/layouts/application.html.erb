@@ -8,8 +8,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <!-- <div class="menu">
+      <div class="menumenu">
+        <div class="logo">
+          <%= link_to welcome_index_url do %>
+            <%= image_tag 'logo.png' %>
+          <% end %>
+        </div>
+
+        <div class="menu_menu">
+          <%= link_to 'Волны', topics_url, :class => 'menu_menu_menu' %>
+          <%= link_to 'События', events_url, :class => 'menu_menu_menu' %>
+          <%= link_to 'Посты', posts_url, :class => 'menu_menu_menu' %>
+        </div>
+      </div>
+    </div> -->
     <%= yield %>
   </body>
 </html>
