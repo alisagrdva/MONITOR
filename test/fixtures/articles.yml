@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teaser: MyText
+  teaser_two: MyText
+  story_id: 1
+
+two:
+  teaser: MyText
+  teaser_two: MyText
+  story_id: 1

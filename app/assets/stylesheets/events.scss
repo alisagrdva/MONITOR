@@ -1,0 +1,57 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.body_events {
+  font-family: 'Druk-Wide-Cyr-Bold';
+  background-color: black;
+  margin: 0;
+}
+
+.index_event_card {
+  color: white;
+  line-height: 18px;
+  background-color: white;
+  font-size: 14px;
+  width: 496px;
+  height: 219px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.events_events {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event_card_withoutimage{
+  width: 496px;
+  height: 219px;
+  background-color: purple;
+}
+
+.plus_event {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-family: 'Proxima-Nova-Regular';
+
+  margin-bottom: 50px;
+
+}
+
+.plus {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.vse_events {
+  display: flex;
+  align-items: center;
+  width: 1022px;
+  justify-content: space-between;
+}

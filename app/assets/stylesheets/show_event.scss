@@ -1,0 +1,87 @@
+.body_show_event {
+  font-family: 'Druk-Wide-Cyr-Bold';
+  background-color: black;
+  margin: 0;
+}
+
+.fon_show_event img{
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.show_event_info{
+  margin-left: 200px;
+  margin-top: -30px;
+}
+
+.show_event_info_title {
+  font-size: 46px;
+  text-transform: uppercase;
+  font-weight: 800;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+  margin-bottom: 50px;
+
+}
+
+.show_event_info_date {
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+}
+
+.show_event_info_place {
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+  margin-top: 20px;
+}
+
+.show_event_info_link {
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+  margin-top: 20px;
+  p {
+    font-family: 'Proxima-Nova-Light';
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+    margin: 5px 0px 0px 0px;
+  }
+}
+
+.show_event_info_teaser {
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+  margin-top: 20px;
+  p {
+    font-family: 'Proxima-Nova-Light';
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+    width: 800px;
+    line-height: 1.4;
+    margin: 5px 0px 0px 0px;
+  }
+}
+
+.show_event_editknopka {
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+  text-decoration: none;
+}
+
+.show_event_posts {
+  color: white;
+}
+
+.delete_event {
+  margin-left: 200px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}

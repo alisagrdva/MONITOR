@@ -1,0 +1,83 @@
+  <%= render 'layouts/application', topic: @topic %>
+
+  <body class="body_posts">
+
+  <div class="fon"><%= image_tag ("fon.png") %></div>
+
+  <section class="waves">
+    <div class="waves_scroll">
+      <% @topics.each do |topic| %>
+      <div class="waves_title">
+        <%= topic.title %>
+      </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="posts">
+
+    <div class="vse_events">
+      <div class="posts_zagolovok">
+        <h1>ПОСТЫ</h1>
+      </div>
+    </div>
+
+
+    <!-- <div class="posts_zagolovok">
+      <h1>ПОСТЫ</h1>
+    </div> -->
+
+    <div class="posts_lenta">
+      <% @posts.each do |post| %>
+        <div class="posts_posts">
+
+          <%= link_to post do %>
+            <div class="post_post_otkr"></div>
+          <% end %>
+
+          <div class="post_post_zatemnenie"></div>
+
+          <div class="posts_posts_image">
+            <div class="posts_posts_withoutImage">
+              <%= image_tag post.stories.first.image.url if post.stories.present? && post.stories.first.image.url.present? %>
+            </div>
+          </div>
+
+          <div class="posts_posts_zagolovok">
+            <!-- <div class="posts_posts_topic_title">
+              <%= Topic.find(post.topic_id).title %>
+            </div> -->
+
+            <div class="posts_posts_event_title">
+              <%= Event.find(post.event_id).title %>
+            </div>
+          </div>
+
+          <div class="posts_posts_opisanie">
+
+            <div class="posts_posts_teaser">
+              <%= post.stories.first.teaser if post.stories.present? %>
+            </div>
+
+            <div class="posts_posts_teaser_two">
+              <%= post.stories.first.teaser_two if post.stories.present? %>
+            </div>
+
+          </div>
+
+          <%#= link_to 'Show', post %>
+          <%#= link_to 'Edit', edit_post_path(post) %>
+          <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="plus">
+      <%= link_to new_post_path, :class => 'plus_event' do %>
+        <div>+ Добавить пост</div>
+      <% end %>
+    </div>
+
+  </section>
+
+</body>

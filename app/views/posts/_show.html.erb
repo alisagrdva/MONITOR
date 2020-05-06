@@ -1,0 +1,55 @@
+<!-- <body class="show_posts">
+
+  <p>
+    <strong>Event:</strong>
+    <%= Event.find(@post.event_id).title %>
+  </p>
+
+  <p>
+    <strong>Topic:</strong>
+    <%= Topic.find(@post.topic_id).title %>
+  </p>
+
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+
+  <%= render 'stories/index' %>
+
+
+</body -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<body class="body_posts_stories_show">
+
+  <div class="posts_stories_show_verh">
+
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+
+    <div class="posts_stories_show_verh_topic">
+      <%= Topic.find(@post.topic_id).title %>
+    </div>
+
+    <div class="posts_stories_show_verh_event">
+      <%= Event.find(@post.event_id).title %>
+    </div>
+
+  </div>
+
+  <div>
+    <%= render 'stories/form', story: Story.new %>
+  </div>
+
+  <div class="stories_lenta">
+    <% @stories.each do |story| %>
+      <div class="sroty" id="story_<%= story.id %>">
+        <%= render 'stories/story', story: story %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</body>

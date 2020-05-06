@@ -1,0 +1,88 @@
+  <%= render 'layouts/application', topic: @topic %>
+
+<%#= link_to 'Edit', edit_topic_path(@topic) %>
+<%#= link_to 'Back', topics_path %>
+
+<body class="body_events">
+
+  <div class="fon"><%= image_tag ("fon.png") %></div>
+
+  <section class="waves">
+    <div class="waves_scroll">
+      <% @topics.each do |topic| %>
+      <div class="waves_title">
+        <%= topic.title %>
+      </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="events">
+
+    <div class="vse_events">
+
+      <div class="events_zagolovok">
+        <h1><%= @topic.title %></h1>
+      </div>
+
+      <%#= link_to 'Edit', edit_topic_path(@topic) %>
+      <%= link_to 'Удалить волну', @topic, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'wave_delete' %>
+
+
+      <!-- <%= link_to new_event_path, :class => 'plus_event' do %>
+        <div>+</div>
+      <% end %> -->
+
+    </div>
+
+    <div class="events_events">
+      <% @events.each do |event| %>
+        <div class="index_event_card">
+
+          <%= link_to event do %>
+            <div class="event_card_otkr"></div>
+          <% end %>
+
+          <div class="event_card_zatemnenie"></div>
+
+          <div class="event_card_image <%= 'event_card_withImage' if event.image.try(:url) %><%= 'event_card_withoutImage' unless event.image.try(:url) %>">
+            <div class="event_card_withoutImage">
+              <%= image_tag event.image.url width: 300 if event.image.url != nil %>
+            </div>
+          </div>
+
+          <div class="event_card_topic">
+            <%= Topic.find(event.topic_id).title %>
+          </div>
+          <div class="event_card_niz">
+            <div class="event_card_title">
+              <%= event.title %>
+            </div>
+            <div class="event_card_date">
+              <%= event.date %>
+            </div>
+            <div class="event_card_time">
+              <%= event.time %>
+            </div>
+            <div class="event_card_place">
+              <%= event.place %>
+            </div>
+          </div>
+
+          <%#= link_to 'Show', event %>
+          <%#= link_to 'Edit', edit_event_path(event) %>
+          <%#= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+        </div>
+      <% end %>
+    </div>
+
+  </section>
+
+  <%#= link_to 'New Event', new_event_path %>
+
+</body>
+
+
+<%#= render 'events/index' %>
+<%= render 'posts/index' %>

@@ -1,0 +1,92 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="event_verh">
+
+    <div class="zagolovok">НОВОЕ СОБЫТИЕ</div>
+
+    <div class="event_verh_zx">
+      <%= link_to events_path, :class => 'posts_back' do %>
+        <div>×</div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="event_form_image">
+    <%= form.label :image do %>
+      <p>+ Изображение</p>
+    <% end %>
+    <%= form.file_field :image, :class => 'image_cnopca' %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div> -->
+
+  <div class="event_attributes">
+
+    <div class="event_form_teaser">
+      <%#= form.label :title %>
+      <%= form.text_field :title, placeholder: "Добавьте заголовок...", :class => 'event_form_teaser' %>
+    </div>
+
+    <div class="event_form_teaser_two">
+      <%#= form.label :teaser %>
+      <%= form.text_area :teaser, placeholder: "Добавьте опиисание...", :class => 'event_form_teaser_two' %>
+    </div>
+
+    <div class="event_date">
+      <%= form.label 'Волна', :class => 'event_date_date' %>
+      <%#= form.number_field :topic_id %>
+      <div class="event_date_date_date">
+        <%= select("event", "topic_id", Topic.all.collect { |t| [ t.title, t.id ] }, { include_blank: true }) %>
+      </div>
+    </div>
+
+    <div class="event_date">
+      <%= form.label 'Дата', :class => 'event_date_date' %>
+      <div class="event_date_date_date">
+        <%= form.date_select :date, :class => 'event_date_date' %>
+      </div>
+    </div>
+
+    <div class="event_date">
+      <%= form.label 'Время', :class => 'event_date_date' %>
+      <div class="event_date_date_date">
+        <%= form.time_select :time, :class => 'event_date_date' %>
+      </div>
+    </div>
+
+    <div class="event_date">
+      <%= form.label 'Место', :class => 'event_date_date' %>
+      <div class="event_date_date_date">
+        <%= form.text_field :place, placeholder: "Добавьте описание...", :class => 'event_form_teaser_teaser' %>
+      </div>
+    </div>
+
+    <div class="event_date">
+      <%= form.label 'Билеты', :class => 'event_date_date' %>
+      <div class="event_date_date_date">
+        <%= form.text_field :link, placeholder: "Добавьте описание...", :class => 'event_form_teaser_teaser' %>
+      </div>
+    </div>
+
+    <div class="event_actions">
+      <%= form.submit 'Сохранить', :class => 'save_cnopca' %>
+    </div>
+
+  </div>
+
+<% end %>

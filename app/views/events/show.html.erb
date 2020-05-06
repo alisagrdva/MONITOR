@@ -1,0 +1,64 @@
+  <%= render 'layouts/application', topic: @topic %>
+
+  <body class="body_show_event">
+
+  <div class="fon_show_event">
+    <%= image_tag @event.image.url width: 300 if @event.image.url != nil %>
+  </div>
+
+  <section class="show_event_info">
+
+    <div class="show_event_info_title">
+      <%= @event.title %>
+    </div>
+
+    <!-- <div class="show_event_info_topic">
+      <%= Topic.find(@event.topic_id).title %>
+    </div> -->
+
+    <div class="show_event_info_date">
+      <%= @event.date %>
+      <%= @event.time %>
+    </div>
+
+    <div class="show_event_info_place">
+      <%= @event.place %>
+    </div>
+
+    <div class="show_event_info_link">Билеты
+      <p><%= @event.link %></p>
+    </div>
+
+    <div class="show_event_info_teaser">Описание
+      <p><%= @event.teaser %></p>
+    </div>
+
+    <div class="plus">
+      <%= link_to edit_event_path(@event), :class => 'plus_event' do %>
+        <div>Редактировать событие</div>
+      <% end %>
+    </div>
+
+  </section>
+
+  <!-- <%= link_to 'Back', events_path %> -->
+
+  <!-- <section class="show_event_posts">
+    <% @posts.each do |post| %>
+      <%= Event.find(post.event_id).title %>
+      <%= Topic.find(post.topic_id).title %>
+      <%= link_to 'Show', post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </section> -->
+
+  <%= render 'posts/index' %>
+
+  <div class="delete_event">
+    <%= link_to @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'plus_event' do %>
+      <div>Удалить событие</div>
+    <% end %>
+  </div>
+
+</body>

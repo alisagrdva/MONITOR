@@ -1,0 +1,34 @@
+
+<body class="insta_body">
+
+  <h1>Insta Posts</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Moniitor</th>
+        <th>Insta account</th>
+        <th>Insta tag</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @insta_posts.each do |insta_post| %>
+        <tr>
+          <td><%= insta_post.moniitor_id %></td>
+          <td><%= insta_post.insta_account_id %></td>
+          <td><%= insta_post.insta_tag_id %></td>
+          <td><%= link_to 'Show', insta_post %></td>
+          <td><%= link_to 'Edit', edit_insta_post_path(insta_post) %></td>
+          <td><%= link_to 'Destroy', insta_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Insta Post', new_insta_post_path %>
+
+</body>

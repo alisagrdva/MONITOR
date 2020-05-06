@@ -1,0 +1,91 @@
+<body>
+
+  <%= form_for @post do |f| %>
+
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="post_verh">
+
+      <div class="zagolovok">НОВЫЙ ПОСТ</div>
+
+      <div class="zx">
+        <%= link_to posts_path, :class => 'posts_back' do %>
+          <div>×</div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="new_story_post">
+
+      <div class="new_story_topic">
+        <%= f.label :topic_id %>
+        <%#= form.number_field :topic_id %>
+        <%= select("post", "topic_id", Topic.all.collect { |t| [ t.title, t.id ] }, { include_blank: true }) %>
+      </div>
+
+      <div class="new_story_event">
+        <%= f.label :event_id %>
+        <%#= form.number_field :event_id %>
+        <%= select("post", "event_id", Event.all.collect { |e| [ e.title, e.id ] }, { include_blank: true }) %>
+      </div>
+
+    </div>
+
+    <div class="new_new_story">
+
+      <!-- <div class="story_zatemnenie"></div> -->
+
+      <div class="story_form_text">
+
+        <%= f.fields_for :stories, @post.stories_for_form do |stories_attributes| %>
+
+          <div class="story_form_verh_cnopki">
+
+            <div class="story_form_image">
+              <%= stories_attributes.label :image do %>
+                <p>+ Изображение</p>
+              <% end %>
+              <%= stories_attributes.file_field :image, :class => 'image_cnopca' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit 'Сохранить', :class => 'save_cnopca' %>
+            </div>
+
+          </div>
+
+          <div class="story_form_teaser">
+            <%#= f.label :teaser %>
+            <%= stories_attributes.text_area :teaser, placeholder: "Добавьте заголовок...", :class => 'form_teaser' %>
+          </div>
+
+          <div class="story_form_teaser_two">
+            <%#= f.label :teaser_two %>
+            <%= stories_attributes.text_area :teaser_two, placeholder: "Добавьте описание...", :class => 'form_teaser_two' %>
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="actions">
+      <%= f.submit %>
+    </div> -->
+
+  <% end %>
+
+
+</body>

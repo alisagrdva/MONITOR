@@ -1,0 +1,17 @@
+<body class="insta_body">
+
+  <p>
+    <strong>Name:</strong>
+    <%= @insta_account.name %>
+  </p>
+
+  <p>
+    <strong>Moniitor:</strong>
+    <%= Moniitor.find(@insta_account.moniitor_id).title %>
+  </p>
+
+  <%= link_to 'Edit', edit_insta_account_path(@insta_account) %> |
+  <%= link_to 'Back', insta_accounts_path %>
+
+
+</body>

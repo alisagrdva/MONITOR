@@ -1,0 +1,32 @@
+<p>ДААА ТООО</p>
+
+<h1>Stories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Teaser</th>
+      <th>Teaser two</th>
+      <th>Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <%= story.articles.first.teaser if story.articles.present? %>
+        <td><%= story.teaser %></td>
+        <td><%= story.teaser_two %></td>
+        <td><%= story.post_id %></td>
+        <td><%= link_to 'Show', story %></td>
+        <td><%= link_to 'Edit', edit_story_path(story) %></td>
+        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story', new_story_path %>

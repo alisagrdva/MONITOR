@@ -1,0 +1,22 @@
+<body class="insta_body">
+
+  <p>
+    <strong>Moniitor:</strong>
+    <%= @insta_post.moniitor_id %>
+  </p>
+
+  <p>
+    <strong>Insta account:</strong>
+    <%= @insta_post.insta_account_id %>
+  </p>
+
+  <p>
+    <strong>Insta tag:</strong>
+    <%= @insta_post.insta_tag_id %>
+  </p>
+
+  <%= link_to 'Edit', edit_insta_post_path(@insta_post) %> |
+  <%= link_to 'Back', insta_posts_path %>
+
+
+</body>

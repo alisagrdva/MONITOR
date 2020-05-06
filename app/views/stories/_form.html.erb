@@ -1,0 +1,74 @@
+<!-- <div class="story_zatemnenie"></div> -->
+
+<div class="story_fon">
+</div>
+
+<div class="story_form_text">
+
+  <%= form_for story, html: { multipart: true }, remote: true do |f| %>
+    <% if story.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+        <ul>
+          <% story.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="story_form_verh_cnopki">
+
+      <div class="story_form_image">
+        <%= f.label :image do %>
+          <p>+ Изображение</p>
+        <% end %>
+        <%= f.file_field :image, :class => 'image_cnopca' %>
+
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Сохранить', :class => 'save_cnopca' %>
+      </div>
+
+    </div>
+
+    <div class="story_form_teaser">
+      <%#= f.label :teaser %>
+      <%= f.text_area :teaser, placeholder: "Добавьте заголовок...", :class => 'form_teaser' %>
+    </div>
+
+    <div class="story_form_teaser_two">
+      <%#= f.label :teaser_two %>
+      <%= f.text_area :teaser_two, placeholder: "Добавьте опиисание...", :class => 'form_teaser_two' %>
+    </div>
+
+    <% if @post %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+    <% else %>
+      <!-- <div class="field">
+        <%= f.label :post_id %>
+        <%#= f.collection_select :post_id, post.all, :id, prompt: true %>
+        <%#= form.number_field :post_id %>
+        <%= select("story", "post_id", Post.all.collect { |p| [ p.id ] }, { include_blank: true }) %>
+      </div> -->
+
+  <% end %>
+    <!-- <%= f.fields_for :post, Post.new do |post_attributes|%>
+
+      <div class="field">
+        <%= post_attributes.label :event_id %>
+        <%= select("post", "event_id", Event.all.collect { |e| [ e.title, e.id ] }, { include_blank: true }) %>
+      </div>
+
+      <div class="field">
+        <%= post_attributes.label :topic_id %>
+        <%#= form.number_field :topic_id %>
+        <%= select("post", "topic_id", Topic.all.collect { |t| [ t.title, t.id ] }, { include_blank: true }) %>
+      </div>
+
+    <% end %> -->
+  <% end %>
+
+</div>

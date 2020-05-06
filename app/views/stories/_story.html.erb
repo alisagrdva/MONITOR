@@ -1,0 +1,48 @@
+<div class="story_zatemnenie"></div>
+
+<div class="cnopci_niz">
+  <%= link_to edit_story_path(story), :class => 'cnopci_niz_edit', remote: true do %>
+    <div>Редактировать</div>
+  <% end %>
+  <%= link_to story, method: :delete, :class => 'cnopci_niz_edit', data: { confirm: 'Are you sure?' } do %>
+    <div>Удалить</div>
+  <% end %>
+</div>
+
+<div class="story_image <%= 'story_withImage' if story.image.url %><%= 'story_withoutImage' unless story.image.url %>">
+  <div class="story_withoutImage">
+    <%= image_tag story.image.url width: 300 if story.image.url != nil %>
+  </div>
+</div>
+
+<div class="story_opisanie">
+
+  <div class="story_teaser">
+    <%= story.teaser %>
+  </div>
+
+  <div class="story_teaser_two">
+    <%= story.teaser_two %>
+  </div>
+
+</div>
+
+
+<div>
+  <%#= link_to 'New Story', new_story_path %>
+</div>
+
+
+<!-- <div><%= story.post_id %></div> -->
+
+<div class="article">
+
+  <div class="article_teaser">
+    <%= story.articles.first.teaser if story.articles.present? %>
+  </div>
+
+  <div class="article_teaser_two">
+    <%= story.articles.first.teaser_two if story.articles.present? %>
+  </div>
+
+</div>

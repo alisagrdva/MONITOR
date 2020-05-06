@@ -1,0 +1,2 @@
+class Moniitor < ApplicationRecord
+end

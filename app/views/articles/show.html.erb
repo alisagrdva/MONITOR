@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%#= image_tag @article.image.url width: 300 if @article.image.url != nil%>
+  <%= image_tag @article.image.url if @article.image.url != nil%>
+</div>
+
+<p>
+  <strong>Teaser:</strong>
+  <%= @article.teaser %>
+</p>
+
+<p>
+  <strong>Teaser two:</strong>
+  <%= @article.teaser_two %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= Story.find(@article.story_id) %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

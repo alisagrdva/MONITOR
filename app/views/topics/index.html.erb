@@ -1,0 +1,47 @@
+
+<%= render 'layouts/application' %>
+
+<body class="body_topics">
+
+  <div class="topicsss">
+
+    <div class="t">
+
+      <div class="topic_zagolovok">ВОЛНЫ</div>
+
+      <% @topics.each do |topic| %>
+        <div class="topic">
+          <div class="topic_title">
+            <%= link_to topic, {:action => 'show', :id => topic.id, :class => 'ttt'} do -%>
+
+              <div class="topic_image">
+                <%= image_tag topic.events.first.image.url if topic.events.present? && topic.events.first.image.url%>
+              </div>
+
+              <%= topic.title %>
+
+            <% end %>
+          </div>
+
+
+          <div class="topic_knopki">
+            <%#= link_to 'Show', topic %>
+            <%#= link_to 'Edit', edit_topic_path(topic) %>
+            <%#= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+
+        </div>
+      <% end %>
+
+      <div class="topic_new">
+        <div class="topic_new_dobavit" onclick="this.style.display='none';event.preventDefault();">
+          <p>+ Добавить волну</p>
+        </div>
+        <%= render 'form', topic: @topic %>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>

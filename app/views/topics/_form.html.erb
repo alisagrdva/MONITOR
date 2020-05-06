@@ -1,0 +1,26 @@
+<div class="new_topic">
+
+  <%= form_with(model: topic, local: true) do |form| %>
+    <% if topic.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+        <ul>
+          <% topic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="t_form">
+      <%#= form.label :title %>
+      <%= form.text_field :title, placeholder: "Новая волна...", :class => 'topis_form' %>
+    </div>
+
+    <div class="actions_topic">
+      <%= form.submit 'Сохранить', :class => 'save_cnopca' %>
+    </div>
+  <% end %>
+
+</div>

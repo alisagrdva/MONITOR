@@ -1,0 +1,73 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<body class="body_posts_stories_show">
+
+  <div class="posts_stories_show_verh">
+
+    <%#= link_to 'Edit', edit_post_path(@post) %>
+
+    <div class="posts_stories_v">
+
+      <div class="posts_stories_show_verh_topic">
+        <%= Topic.find(@post.topic_id).title %> /
+        <%= Event.find(@post.event_id).title %>
+      </div>
+
+      <div class="zx">
+
+        <%= link_to posts_path, :class => 'posts_back' do %>
+          <div>×</div>
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="stories_lenta">
+
+    <!-- <div class="button">
+
+      <div class="prev_button">
+        <%= link_to @post.prev, class: 'prev_button', remote: true do %>
+          <%= image_tag "strelka.svg" %>
+        <% end %>
+      </div>
+
+      <div class="next_button">
+        <%= link_to @post.next, class: 'next_button', remote: true do %>
+          <%= image_tag ("strelka.svg") %>
+        <% end %>
+      </div>
+
+    </div> -->
+
+    <div class="lenta_cscroll">
+
+      <% @stories.each do |story| %>
+        <div class="sroty" id="story_<%= story.id %>">
+          <%= render 'stories/story', story: story %>
+        </div>
+      <% end %>
+
+      <div class="stories_new">
+        <div class="stories_new_dobavit" onclick="this.style.display='none';event.preventDefault();">
+          <p>Добавить историю</p>
+        </div>
+        <%= render 'stories/form', story: Story.new %>
+      </div>
+
+      <div class="block">
+        <p>a</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="DELETE">
+    <%= link_to @post, :class => 'posts_stories_v_delete', method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <div>Удалить пост</div>
+    <% end %>
+  </div>
+
+</body>

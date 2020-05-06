@@ -1,0 +1,37 @@
+
+<body class="insta_body">
+
+  <%= form_with(model: insta_post, local: true) do |form| %>
+    <% if insta_post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(insta_post.errors.count, "error") %> prohibited this insta_post from being saved:</h2>
+
+        <ul>
+          <% insta_post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :moniitor_id %>
+      <%= form.number_field :moniitor_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :insta_account_id %>
+      <%= form.number_field :insta_account_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :insta_tag_id %>
+      <%= form.number_field :insta_tag_id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</body>
