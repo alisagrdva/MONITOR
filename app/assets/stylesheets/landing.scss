@@ -1,0 +1,283 @@
+.landing {
+  // background-color: #21D343;
+}
+
+.landing_menu_menu {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.landing_menu {
+  display: flex;
+  justify-content: center;
+  margin-left: -80px;
+  background-color: #21D343;
+}
+
+.landing_menu_logo_monitor img {
+  width: 200px;
+  margin-top: 2px;
+}
+
+.landing_menu_logo img {
+  width: 110px;
+}
+
+.landing_menu_logo_X {
+  font-family: 'Firs-Bold';
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+
+.landing_hello {
+  background-color: #21D343;
+  font-family: 'Firs-Bold';
+}
+
+.landing_hello_one,
+.landing_hello_two,
+.landing_hello_three,
+.landing_hello_four,
+.landing_hello_five {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -60px;
+}
+
+
+.landing_hello_one_text {
+  font-size: 180px;
+  margin-left: 30px;
+}
+.landing_hello_one_eye {
+  margin-right: 40px;
+}
+
+
+.landing_hello_two_text {
+  font-size: 180px;
+  color: white;
+  margin-left: 150px;
+}
+
+
+.landing_hello_three_text {
+  font-size: 180px;
+  color: white;
+  margin-right: 40px;
+}
+.landing_hello_three_eye {
+  margin-left: 150px;
+}
+
+
+.landing_hello_four_text {
+  font-size: 180px;
+  margin-left: 30px;
+}
+.landing_hello_four_eye {
+  margin-right: 40px;
+}
+
+
+.landing_hello_five_text {
+  font-size: 180px;
+  color: white;
+  margin-right: 150px;
+  margin-bottom: 30px;
+}
+.landing_hello_five_eye {
+  margin-left: 150px;
+}
+
+.landing_hello_one_eye img,
+.landing_hello_three_eye img,
+.landing_hello_four_eye img,
+.landing_hello_five_eye img {
+  object-fit: cover;
+  width: 280px;
+  margin-top: 45px;
+}
+
+
+
+
+.landing_yo {
+  background-color: white;
+}
+
+.landing_yo_two,
+.landing_yo_three,
+.landing_yo_five {
+  display: flex;
+}
+
+.landing_yo_one_text,
+.landing_yo_two_text,
+.landing_yo_three_text,
+.landing_yo_five_text,
+.landing_yo_six_text {
+  font-size: 300px;
+  color: #21D343;
+  font-family: 'Firs-Bold';
+}
+
+.landing_yo_one_text {
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.landing_yo_two_str img{
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+.landing_yo_two_text_text {
+  margin-left: 70px;
+  width: 400px;
+  font-family: 'Proxima-Nova-Semibold';
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.landing_yo_two_text {
+  margin-top: -85px;
+  margin-left: 40px;
+}
+
+.landing_yo_three_text {
+  margin-left: 20px;
+  margin-top: -85px;
+}
+
+.landing_yo_three_str img {
+  margin-left: 70px;
+  margin-top: 5px;
+}
+
+.landing_yo_three_text_text {
+  width: 500px;
+  font-family: 'Proxima-Nova-Semibold';
+  font-size: 20px;
+  line-height: 1.4;
+  margin-left: 70px;
+}
+
+.landing_yo_four_text {
+  font-size: 273px;
+  color: #21D343;
+  font-family: 'Firs-Bold';
+  margin-left: 20px;
+  margin-top: -85px;
+}
+
+.landing_yo_five_str img {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+.landing_yo_five_text_text {
+  margin-left: 70px;
+  width: 390px;
+  font-family: 'Proxima-Nova-Semibold';
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.landing_yo_five_text {
+  margin-top: -78px;
+  margin-left: 90px;
+}
+
+.landing_yo_six_text {
+  margin-left: 20px;
+  margin-top: -70px;
+}
+
+.landing_yo_two_str img,
+.landing_yo_three_str img,
+.landing_yo_five_str img {
+  width: 90px;
+}
+
+.landing_yo_one,
+.landing_yo_two,
+.landing_yo_three,
+.landing_yo_four,
+.landing_yo_five,
+.landing_yo_six {
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+.landing_opisanie {
+  margin-top: 200px;
+  background-color: black;
+}
+
+.landing_opisanie_one,
+.landing_opisanie_two,
+.landing_opisanie_three {
+  display: flex;
+  // justify-content: space-between;
+  margin-bottom: 200px;
+}
+
+.landing_opisanie_two {
+  justify-content: flex-end;
+}
+
+
+.landing_opisanie_one_text_zag,
+.landing_opisanie_two_text_zag,
+.landing_opisanie_three_text_zag {
+  font-size: 70px;
+  color: white;
+  font-family: 'Firs-Bold';
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.landing_opisanie_one_text_op,
+.landing_opisanie_two_text_op,
+.landing_opisanie_three_text_op {
+  width: 510px;
+  font-family: 'Proxima-Nova-Light';
+  font-size: 20px;
+  line-height: 1.4;
+  color: white;
+}
+
+
+.landing_opisanie_one_str img,
+.landing_opisanie_three_str img {
+  width: 90px;
+  margin-left: 40px;
+}
+
+.landing_opisanie_two_str img {
+  transform: rotate(180deg);
+  width: 90px;
+  margin-left: 70px;
+  margin-right: 40px;
+}
+
+.landing_opisanie_one_im img,
+.landing_opisanie_two_im img,
+.landing_opisanie_three_im img {
+  width: 520px;
+  margin-left: 70px;
+}
+
+.landing_opisanie_one_text,
+.landing_opisanie_two_text,
+.landing_opisanie_three_text {
+  margin-left: 70px;
+}
